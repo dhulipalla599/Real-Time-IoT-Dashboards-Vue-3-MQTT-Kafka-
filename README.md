@@ -119,18 +119,9 @@ npm test
 npm test -w backend/api-gateway
 ```
 
-## Production Deployment
-
-See [DEPLOYMENT.md](./DEPLOYMENT.md) for AWS ECS deployment instructions.
-
-## Related Article
-
-📄 [Building Enterprise-Grade Real-Time IoT Dashboards with Vue 3, MQTT, and Kafka](./docs/ARTICLE.md)
-
 ## Author
 
-**D.V. Sandeep**  
-Principal Engineer @ Hughes  
+**Dhullipalla Venkata Sandeep**  
 [LinkedIn](https://linkedin.com/in/dhullipalla-sandeep) | [Email](mailto:dvsandeep599@gmail.com)
 
 ## License
