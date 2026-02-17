@@ -1,0 +1,40 @@
+{
+  "name": "iot-realtime-dashboard",
+  "version": "1.0.0",
+  "description": "Enterprise-grade IoT monitoring platform with MQTT, Kafka, WebSockets, and Vue 3",
+  "private": true,
+  "workspaces": [
+    "backend/mqtt-kafka-bridge",
+    "backend/websocket-server",
+    "backend/stream-processor",
+    "backend/api-gateway",
+    "frontend"
+  ],
+  "scripts": {
+    "install:all": "npm install && npm install --workspaces",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "dev:backend": "docker-compose up -d && npm run dev:services",
+    "dev:services": "concurrently \"npm run dev -w backend/mqtt-kafka-bridge\" \"npm run dev -w backend/websocket-server\" \"npm run dev -w backend/api-gateway\"",
+    "dev:frontend": "npm run dev -w frontend",
+    "build": "npm run build --workspaces",
+    "test": "npm test --workspaces",
+    "docker:up": "docker-compose up -d",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f"
+  },
+  "keywords": [
+    "iot",
+    "mqtt",
+    "kafka",
+    "websockets",
+    "vue3",
+    "real-time",
+    "monitoring",
+    "dashboard"
+  ],
+  "author": "D.V. Sandeep <dvsandeep599@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
